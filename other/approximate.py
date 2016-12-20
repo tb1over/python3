@@ -8,6 +8,12 @@ SUFFIXES = {1000: ['KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'],
 
 
 def approximate(size, a_kilobyte_is_1024_bytes=True):
+    """
+    Convert a file size to human-readable form.
+    :param size:file size in bytes
+    :param a_kilobyte_is_1024_bytes:if True (default),use multiple of 1024
+    :return:string
+    """
     if size < 0:
         raise ValueError('number must be no-negative')
     multiple = 1024 if a_kilobyte_is_1024_bytes else 1000
@@ -22,4 +28,6 @@ def approximate(size, a_kilobyte_is_1024_bytes=True):
 if __name__ == '__main__':
     print(approximate(10000000, False))
     print(approximate(10000000))
+
+
 
