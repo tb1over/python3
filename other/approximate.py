@@ -7,7 +7,7 @@ SUFFIXES = {1000: ['KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'],
             }
 
 
-def approximate(size, a_kilobyte_is_1024_bytes= True):
+def approximate(size, a_kilobyte_is_1024_bytes=True):
     if size < 0:
         raise ValueError('number must be no-negative')
     multiple = 1024 if a_kilobyte_is_1024_bytes else 1000
